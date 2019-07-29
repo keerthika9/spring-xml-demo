@@ -1,23 +1,23 @@
 package com.stackroute.domain;
 
-import com.stackroute.domain.Actor;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
+
 
 
 public class Main {
-  public static void main(String[] args) {
-    XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
-    Movie movie1 = (Movie) xmlBeanFactory.getBean("movie");
+  public static void main(String[] args){
     ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-    Movie movie = (Movie) context.getBean("movie");
-    System.out.println(movie.getActor());
-    movie.setApplicationContext(context);
-    movie.setBeanFactory(xmlBeanFactory);
-    movie.setBeanName("beandata");
+
+    Movie movie1 = (Movie) context.getBean("MovieA", Movie.class);
+    System.out.println(movie1);
+
+    Movie movie2 = (Movie) context.getBean("MovieB");
+    System.out.println(movie2);
+
+    System.out.println(movie1 == movie2);
+
 
   }
 }

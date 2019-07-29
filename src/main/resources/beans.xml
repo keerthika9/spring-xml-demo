@@ -4,18 +4,22 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
   <bean id="actor" class="com.stackroute.domain.Actor">
-    <constructor-arg index="0" value="abcdef"> </constructor-arg>
-    <constructor-arg index="1" value="female"> </constructor-arg>
-    <constructor-arg index="2" value="20"></constructor-arg>
+    <constructor-arg value="keer" index="0" type="java.lang.String"></constructor-arg>
+    <constructor-arg value="female" index="1" type="java.lang.String"></constructor-arg>
+    <constructor-arg value="21" index="2"></constructor-arg>
+  </bean>
+  <bean id="actor2" class="com.stackroute.domain.Actor">
+    <constructor-arg value="sruthi" index="0" type="java.lang.String"></constructor-arg>
+    <constructor-arg value="female" index="1" type="java.lang.String"></constructor-arg>
+    <constructor-arg value="22" index="2"></constructor-arg>
+  </bean>
+  <bean id="MovieA" class="com.stackroute.domain.Movie" scope="prototype" autowire="byName">
 
   </bean>
-
-  <bean id="movie" class="com.stackroute.domain.Movie" autowire="constructor">
-
-
+  <bean id="MovieB" class="com.stackroute.domain.Movie" scope="prototype" autowire="constructor">
   </bean>
-
-
 
 </beans>
