@@ -1,10 +1,16 @@
 package com.stackroute.domain;
 
-public class Actor
-{
-  String name;
-  String gender;
-  int age;
+public class Actor {
+  private String name;
+  private String gender;
+
+  public Actor(String name, String gender, int age) {
+    this.name = name;
+    this.gender = gender;
+    this.age = age;
+  }
+
+  private int age;
 
   public String getName() {
     return name;
@@ -12,15 +18,6 @@ public class Actor
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  @Override
-  public String toString() {
-    return "Actor{" +
-      "name='" + name + '\'' +
-      ", gender='" + gender + '\'' +
-      ", age=" + age +
-      '}';
   }
 
   public String getGender() {
@@ -39,5 +36,12 @@ public class Actor
     this.age = age;
   }
 
-
+  @Override
+  public String toString() {
+    return "Actor{" +
+      "name='" + name + '\'' +
+      ", gender='" + gender + '\'' +
+      ", age=" + age +
+      '}';
+  }
 }
