@@ -1,7 +1,6 @@
 package com.stackroute.domain;
 
-public class Movie {
-
+public class Movie  {
   @Override
   public String toString() {
     return "Movie{" +
@@ -18,4 +17,5 @@ public class Movie {
   public void setActor(Actor actor) {
     this.actor = actor;
   }
+
 }
